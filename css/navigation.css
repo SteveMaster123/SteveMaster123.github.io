@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Nokora&display=swap');
+
+:root {
+    --primary: #bc6c25;
+    --secondary: #dda15e;
+    --secondary2: #fefae0;;
+    --accent: #283618;
+    --accent2: #606c38;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#nav-support {
+    height: 7vh;
+    width: 100%;
+    background-color: transparent;
+}
+
+nav {
+    width: 100%;
+    height: 7vh;
+    background-color: var(--primary);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    box-shadow:
+    0 3.2px 5.3px rgba(0, 0, 0, 0.04),
+    0 10.7px 17.9px rgba(0, 0, 0, 0.06),
+    0 48px 80px rgba(0, 0, 0, 0.1)
+    ;
+
+}
+
+#home-logo {
+    background-color: var(--accent);
+    width: calc(7vh - 1em);
+    height: 100%;
+
+}
+#gobackLabel {
+    width: calc(7vh - 1em);
+    height: 100%;
+}
+#gobackLabel svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--secondary2);
+}
+#goback {
+    background-color: transparent;
+    border:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#callToAction {
+    padding-left: .9em;
+    padding-right: .9em;
+    height: 100%;
+    padding-top: .2em;
+    border-radius: .5em;
+    background: #ee0979;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgba(255, 106, 0, .8), rgba(238, 9, 121, .8));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(255, 106, 0, .8), rgba(238, 9, 121, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: var(--secondary2);
+    font-family: 'Nokora', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 125ms all ease-in;
+    opacity: .8;
+    text-decoration: none;
+    position: relative;
+}
+
+#callToAction:hover, #callToAction:active {
+    background: -webkit-linear-gradient(to right, rgba(255, 106, 0, 1), rgba(238, 9, 121, 1));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(255, 106, 0, 1), rgba(238, 9, 121, 1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

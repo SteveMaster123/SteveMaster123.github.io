@@ -1,0 +1,124 @@
+hr {
+    border:none;
+    border-top: 1px solid var(--accent);
+}
+
+#pop-container {
+    width: 80%;
+    max-width: 40vh;
+    /* height: auto; */
+    height: 50vh;
+    background-color: #F9FBFF;
+    border-radius: .5em;
+    opacity: 1;
+    position: fixed;
+    left: 50%;
+    top: 60%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: 5vh 1fr;
+    visibility: hidden;
+    transition: all ease 300ms;
+}
+
+#pop-header {
+    background-color: var(--secondary);
+    border-radius: .5em .5em 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em;
+}
+#addCartBtn {
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    fill: var(--accent);
+    margin-right: .1em;
+}
+#extras-container {
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+    padding-top: 0;
+    overflow-y: scroll;
+}
+#pop-container h3 {
+    text-align: center;
+    font-family: 'Kdam Thmor', cursive;
+    font-size: 1.8em;
+    color: var(--accent);
+}
+#pop-qty {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em;
+}
+#pop-qty button {
+    padding: .5em 1em;
+    border: none;
+    background-color: var(--secondary);
+    border-radius: .1em;
+}
+#pop-qty input {
+    text-align: center;
+    min-width: 1em;
+    max-width: 3em;
+    background-color: transparent;
+    border: none;
+}
+#pop-qty input:active, #pop-qty input:focus {
+    outline: none;
+}
+.choiceBtn {
+    margin-left: 1em;
+}
+.extra {
+    padding: .5em;
+}
+.extra h4 {
+    font-family: 'Nokora', serif;
+    font-size: 1.5em;
+    color: var(--accent);
+}
+/* .extra input {
+    fill: var(--accent2)
+} */
+.extra label {
+    font-family: 'Nokora', serif;
+    font-size: 1.3em;
+    color: var(--accent2);
+    background-color: rgba(40, 54, 24, 0.05);
+    display: block;
+    margin-top: .2em;
+    border-radius: .1em;
+    padding-top: .1em;
+    padding-bottom: .1em;
+}
+.extra label:focus {
+    background-color: rgba(40, 54, 24, 0.15);
+}
+
+#description {
+    width: 100%;
+    height: auto;
+    padding: .5em;
+}
+#description textarea {
+    width: 100%;
+    min-height: 90px;
+    resize: none;
+    padding: .1em .5em;
+    border: 1px solid var(--accent);
+    border-radius: .1em;
+    background-color: transparent;
+}
+#description textarea:focus, #description textarea:active {
+    outline: none;
+}

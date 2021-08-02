@@ -4,30 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <title>session Testing</title>
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="shortcut icon" href="#">
+    <title>Lok Yin - Home</title>
 </head>
 <body>
-    <h2>cookies</h2>
-    <div>
-        <h3>Text</h3>
-        <button>Add</button>
-    </div>
-    <script src="cookies.js"></script>
-    <script>
-        const h3 =document.querySelector("h3")
-        const button = document.querySelector('button')
+    <div id="nav-support"></div>
+    <nav>
+        <a href="index.html" id="home-logo"></a>
+        <a href="html/ភេសជ្ជៈម៉ាសុីន.html" id="callToAction">ម៉ឺនុយ</a>
+    </nav>
 
-        button.addEventListener('click', function() {
-            setCookie('bob', 'isNice', 1)
-            h3.innerHTML = document.cookie
-        })
-        // button.addEventListener('click', function() {
-        //     sessionStorage.clear();
-        //     sessionStorage.setItem('{"bob": "is nice", "bab", "is not nice"}', "bob")
-
-        //     h3.innerHTML = Object.keys(sessionStorage)
-        // })
-    </script>
 </body>
 </html>

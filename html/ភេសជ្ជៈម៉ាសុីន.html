@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/popup.css">
+    <link rel="shortcut icon" href="#">
+    <title>Lok Yin - Menu</title>
+</head>
+<body>
+    <!-- CART -->
+    <div id="cart">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.37-.66-.11-1.48-.87-1.48H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <div id="nav-support"></div>
+    <nav>
+        <a href="../index.html" id="home-logo"></a>
+        <div id="callToAction">ទាញយកកម្មវិធី</div>
+    </nav>
+
+
+    <!-- POP-CONTAINER -->
+    <div id="pop-container">
+        <div id="pop-header">
+            <svg id="pop-cross" class="cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+
+            <svg id="addCartBtn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+        </div>
+        <div id="extras-container">
+            <h3 id="orderName">គុយទាវ</h3>
+            <hr>
+            <div id="extras-div">
+
+                <div class="extra">
+                    <h4>ប្រភេទ</h4>
+                    <label for="គោក"><input type="radio" id="គោក" name="type" class="choiceBtn firstRadio"> គោក</label>
+                    <label for="អត់បន្លែ"><input type="radio" id="អត់បន្លែ" name="type" class="choiceBtn"> អត់បន្លែ</label>
+                    <label for="បន្ថែមសាច់"><input type="radio" id="បន្ថែមសាច់" name="type" class="choiceBtn"> បន្ថែមសាច់</label>
+                </div>
+                <div class="extra">
+                    <h4>ពណ៌</h4>
+                    <label for="ក្រហម"><input type="checkbox" id="ក្រហម" name="ពណ៌" class="choiceBtn"> ក្រហម</label>
+                    <label for="ខៀវ"><input type="checkbox" id="ខៀវ" name="ពណ៌" class="choiceBtn"> អត់បន្លែ</label>
+                    <label for="បៃតង"><input type="checkbox" id="បៃតង" name="ពណ៌" class="choiceBtn"> បន្ថែមសាច់</label>
+                </div>
+
+            </div>
+
+            <hr>
+            <div id="pop-qty">
+                <button id='minus'>-</button>
+                <input type="number" value="1" id="qty" class="pop-qty-input">
+                <button id="plus">+</button>
+            </div>
+            <hr>
+
+            <div id="description">
+                <h4>បរិយាយ</h4>
+                <textarea placeholder="បរិយាយ" id="description-input"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <main>
+        <div id="categories">
+
+                <!-- ALL CATEGORIES -->
+                <a href="ភេសជ្ជៈម៉ាសុីន.html" class="category">
+                    <div><img src="./images/ភេសជ្ជៈម៉ាសុីន.png" alt="ភេសជ្ជៈម៉ាសុីន"></div>
+                    <h4>ភេសជ្ជៈម៉ាសុីន</h4>
+                </a>
+
+        </div>
+        
+        <div id="main-menu">
+            <h2 class="specific">គុយទាវ</h2>
+            <div class="specific-food-container">
+
+                <!-- FOOD MENU -->
+                <div class="specific-food" data-price="1.99">
+                    <div class="food-img">
+                        <img src="images/កូកា.png" alt="កូកា">
+                    </div>
+                    <h3 class="food-name">កូកា</h3>
+                    <h4 class="food-price">1.99$</h4>
+                </div>
+                <div class="specific-food" data-price="2.99">
+                    <div class="food-img">
+                        <img src="images/បាយ.png" alt="បាយ">
+                    </div>
+                    <h3 class="food-name">បាយ</h3>
+                    <h4 class="food-price">2.99$</h4>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- RECEPT CONTAINER -->
+    <div id="overlay"></div>
+    <div id="recept-container">
+        <section id="cross-container">
+            <svg id="cross" class="cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </section>
+        <!-- recept -->
+        <section id="recept"></section>
+        <!---->
+        <section id="total-container">
+            <a id="checkout" href="checkout.html">បន្តការទិញ</a>
+            <h3 id="total">4.99 $</h3>
+        </section>
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <script src="../js/cookies.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+        let qtyInput = document.querySelectorAll("#qty");
+        const plus = document.querySelector('#plus')
+        const minus = document.querySelector('#minus')
+        const qtyValue = document.querySelector('.pop-qty-input');
+
+        for (let qty of qtyInput) {
+            qty.addEventListener('blur', function() {
+                if (qty.value == "" || qty.value == 0) {
+                    qty.value = 1
+                }
+            })
+        }
+        plus.addEventListener('click', function() {
+            if (qtyValue.value >= 1) {
+                qtyValue.value =  parseInt(qtyValue.value) + 1
+            }
+        })
+        minus.addEventListener('click', function() {
+            if (qtyValue.value > 1) {
+                qtyValue.value = parseInt(qtyValue.value) - 1
+            }
+                
+        })
+
+    </script>
+</body>
+</html>
