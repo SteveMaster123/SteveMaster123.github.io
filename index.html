@@ -8,21 +8,26 @@
     <title>session Testing</title>
 </head>
 <body>
+    <h2>cookies</h2>
     <div>
         <h3>Text</h3>
         <button>Add</button>
     </div>
-
+    <script src="cookies.js"></script>
     <script>
         const h3 =document.querySelector("h3")
         const button = document.querySelector('button')
 
         button.addEventListener('click', function() {
-            sessionStorage.clear();
-            sessionStorage.setItem('{"bob": "is nice", "bab", "is not nice"}', "bob")
-
-            h3.innerHTML = Object.keys(sessionStorage)
+            setCookie('bob', 'isNice', 1)
+            h3.innerHTML = document.cookie
         })
+        // button.addEventListener('click', function() {
+        //     sessionStorage.clear();
+        //     sessionStorage.setItem('{"bob": "is nice", "bab", "is not nice"}', "bob")
+
+        //     h3.innerHTML = Object.keys(sessionStorage)
+        // })
     </script>
 </body>
 </html>
