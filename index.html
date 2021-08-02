@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>session Testing</title>
+</head>
+<body>
+    <div>
+        <h3>Text</h3>
+        <button>Add</button>
+    </div>
+
+    <script>
+        const h3 =document.querySelector("h3")
+        const button = document.querySelector('button')
+
+        button.addEventListener('click', function() {
+            sessionStorage.clear();
+            sessionStorage.setItem('{"bob": "is nice", "bab", "is not nice"}', "bob")
+
+            h3.innerHTML = Object.keys(sessionStorage)
+        })
+    </script>
+</body>
+</html>
