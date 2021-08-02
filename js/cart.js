@@ -51,7 +51,6 @@ function resetPopCard() {
 }
 
 function updateCart() {
-    alert(document.cookie)
     let orders = document.cookie.split('; ')
     receptOrder.innerHTML = ""
     orders.forEach(function (order) {
