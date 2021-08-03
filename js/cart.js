@@ -51,32 +51,34 @@ function resetPopCard() {
 }
 
 function updateCart() {
-    let orders = document.cookie.split('; ')
+    let orders = Object.keys(sessionStorage)
     receptOrder.innerHTML = ""
     orders.forEach(function (order) {
-        let orderOri = order.split("=")[0]
-        QTY = order.split("=")[1]
-        order = JSON.parse(order.split("=")[0])
-        receptOrder.innerHTML += `<div class="order" data-foodName="${orderOri.replaceAll("\"", "'")}">
-            <img class="order-img" src="./images/${order.name}.png" alt="${order.name}">
-            <h4 class="order-name">${order.name}<span class="extras">${order.extras.length > 2 ? "(" : ""}${order.extras.slice(order.extras.indexOf("[")+ 1, order.extras.indexOf("]"))}${order.extras.length > 2 ? ")" : ""}</span></h4>
-            <h4 class="order-price">${parseInt(order.price) + parseInt(QTY)}$</h4>
-            <div class="order-qty"><label class="qty">qty: </label><input onclick="updateQTY(this)" style="padding-left: .5em;" class="qty" id="qty" type="number" value="${QTY}"></div>
-            <h4 onclick="deleteOrder(this)" class="order-delete"><svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 0 24 24" width="1.2em" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM9 9h6c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-8c0-.55.45-1 1-1zm6.5-5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1h-2.5z"/></svg> លុប</h4>
-        </div>`
+        if (order != "IsThisFirstTime_Log_From_LiveServer") {
+            let orderOri = order
+            QTY = sessionStorage.getItem(order)
+            order = JSON.parse(order)
+            receptOrder.innerHTML += `<div class="order" data-foodName="${orderOri.replaceAll("\"", "'")}">
+                <img class="order-img" src="./images/${order.name}.png" alt="${order.name}">
+                <h4 class="order-name">${order.name}<span class="extras">${order.extras.length > 2 ? "(" : ""}${order.extras.slice(order.extras.indexOf("[")+ 1, order.extras.indexOf("]"))}${order.extras.length > 2 ? ")" : ""}</span></h4>
+                <h4 class="order-price">${parseInt(order.price) + parseInt(QTY)}$</h4>
+                <div class="order-qty"><label class="qty">qty: </label><input onclick="updateQTY(this)" min="1" step="1" oninput="validity.valid||(value='');" style="padding-left: .5em;" class="qty" id="qty" type="number" value="${QTY}"></div>
+                <h4 onclick="deleteOrder(this)" class="order-delete"><svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 0 24 24" width="1.2em" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM9 9h6c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-8c0-.55.45-1 1-1zm6.5-5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1h-2.5z"/></svg> លុប</h4>
+            </div>`
+        }
     })
 }
 function deleteOrder(e) {
-    eraseCookie(e.parentElement.getAttribute('data-foodName').replaceAll("'", "\""))
+    sessionStorage.removeItem(e.parentElement.getAttribute('data-foodName').replaceAll("'", "\""))
     e.parentElement.remove()
-    if (document.cookie == "") {
+    if (removeItemOnce(Object.keys(sessionStorage), "IsThisFirstTime_Log_From_LiveServer").length == 0) {
         outOfCart();
         cart.style.visibility = "hidden"
     }
 }
 function updateQTY(e) {
     e.addEventListener('blur', function () {
-        setCookie(e.parentElement.parentElement.getAttribute('data-foodName').replaceAll("'", "\""), e.value, 1)
+        sessionStorage.setItem(e.parentElement.parentElement.getAttribute('data-foodName').replaceAll("'", "\""), e.value)
     })
 }
 
@@ -91,7 +93,7 @@ for (let food of document.querySelectorAll(".specific-food")) {
 }
 
 //Event Listener
-document.cookie == "" ? cart.style.visibility = "hidden" : cart.style.visibility = "visible";
+removeItemOnce(Object.keys(sessionStorage), "IsThisFirstTime_Log_From_LiveServer").length == 0 ? cart.style.visibility = "hidden" : cart.style.visibility = "visible";
 cart.addEventListener("click", function () {
     cart.style.visibility = "hidden"
     disableScrolling()
@@ -127,9 +129,9 @@ document.getElementById("addCartBtn").addEventListener('click', function () {
     });
 
     value = `{"name": "${popName.innerHTML}","price":"${price}", "extras": "${"[" + allExtras + "]"}", "description": "${description.value}"}`
-    if (getCookie(value)) {popQty.value = parseInt(getCookie(value)) + parseInt(popQty.value)}
-    setCookie(value, popQty.value, 1)
-    document.cookie == "" ? cart.style.visibility = "hidden" : cart.style.visibility = "visible"
+    if (sessionStorage.getItem(value)) { popQty.value = parseInt(getCookie(value)) + parseInt(popQty.value) }
+    sessionStorage.setItem(value, popQty.value)
+    sessionStorage == [] ? cart.style.visibility = "hidden" : cart.style.visibility = "visible"
     resetPopCard()
 })
 

@@ -56,32 +56,33 @@
         </div>
     </main>
 
+    <script src="../js/storage.js"></script>
     <script>
         const total = document.querySelector(".total");
         const receptContainer = document.querySelector("#recept-container")
         const recept = document.querySelector("#recept")
 
         function updateRecept() {
-            let orders = document.cookie.split('; ')
+            let orders = Object.keys(sessionStorage)
             recept.innerHTML = ""
             orders.forEach(function(order) {
-                QTY = order.split("=")[1]
-                order = JSON.parse(order.split("=")[0])
+                if (order != "IsThisFirstTime_Log_From_LiveServer")
+                {QTY = sessionStorage.getItem(order)
+                order = JSON.parse(order)
                 recept.innerHTML += `<section class="orders">
                     <div class="orders-name">${order.name}</div>
                     <div class="orders-qty">x${QTY}</div>
                     <div class="orders-price">${order.price}$</div>
-                </section>`
+                </section>`}
             })
         }
 
-        document.cookie == "" ? receptContainer.style.visibility = 'hidden' : updateRecept();
+        removeItemOnce(Object.keys(sessionStorage), "IsThisFirstTime_Log_From_LiveServer").length == 0 ? receptContainer.style.visibility = 'hidden' : updateRecept();
 
         let allPrice = [];
         for (let orderPrice of document.querySelectorAll(".orders-price")) {
             allPrice.push(parseFloat(orderPrice.innerHTML.slice(0, orderPrice.innerHTML.length - 1)))
         }
-        console.log(allPrice)
         if (allPrice != []) {
             total.innerHTML = `${allPrice.reduce((a, b) => a + b)}$`;
         } else {total.innerHTML = '0.00$'}
@@ -99,7 +100,5 @@
 
 
     </script>
-    <!-- <script src="../js/cookies.js"></script> -->
-    <script src="../js/location.js"></script>
 </body>
 </html>

@@ -21,6 +21,15 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 #nav-support {
     height: 7vh;
     width: 100%;

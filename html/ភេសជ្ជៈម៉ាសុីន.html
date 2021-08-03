@@ -55,7 +55,7 @@
             <hr>
             <div id="pop-qty">
                 <button id='minus'>-</button>
-                <input type="number" value="1" id="qty" class="pop-qty-input">
+                <input min="0" step="1" oninput="validity.valid||(value='');" type="number" value="1" id="qty" class="pop-qty-input">
                 <button id="plus">+</button>
             </div>
             <hr>
@@ -121,7 +121,7 @@
 
 
     <!-- SCRIPTS -->
-    <script src="../js/cookies.js"></script>
+    <script src="../js/storage.js"></script>
     <script src="../js/cart.js"></script>
     <script>
         let qtyInput = document.querySelectorAll("#qty");
@@ -129,13 +129,6 @@
         const minus = document.querySelector('#minus')
         const qtyValue = document.querySelector('.pop-qty-input');
 
-        for (let qty of qtyInput) {
-            qty.addEventListener('blur', function() {
-                if (qty.value == "" || qty.value == 0) {
-                    qty.value = 1
-                }
-            })
-        }
         plus.addEventListener('click', function() {
             if (qtyValue.value >= 1) {
                 qtyValue.value =  parseInt(qtyValue.value) + 1
