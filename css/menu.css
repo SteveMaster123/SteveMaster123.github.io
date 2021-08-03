@@ -218,7 +218,7 @@ main {
     width: 100%;
     height: 12vh;
     display: grid;
-    grid-template-columns: auto 3fr 1fr;
+    grid-template-columns: 12vh 3fr 1fr;
     grid-auto-rows: 1fr 1fr;
     background-color: rgba(0, 0, 0, 0.05);
     margin-bottom: .5em;
@@ -227,7 +227,8 @@ main {
     padding-right: .5em;
 }
 .order-img {
-    height: 100%;
+    width: 12vh;
+    height: 12vh;
     grid-row: 1/3;
     padding: .5em;
 }
@@ -236,7 +237,7 @@ main {
     display: flex;
     align-items: flex-end;
     font-family: 'Nokora', serif;
-    font-size: 1.3em;
+    font-size: 1em;
 }
 .extras {
     font-size: .7em;
