@@ -129,7 +129,7 @@ document.getElementById("addCartBtn").addEventListener('click', function () {
     });
 
     value = `{"name": "${popName.innerHTML}","price":"${price}", "extras": "${"[" + allExtras + "]"}", "description": "${description.value}"}`
-    if (sessionStorage.getItem(value)) { popQty.value = parseInt(getCookie(value)) + parseInt(popQty.value) }
+    if (sessionStorage.getItem(value)) { popQty.value = parseInt(sessionStorage.getItem(value)) + parseInt(popQty.value) }
     sessionStorage.setItem(value, popQty.value)
     sessionStorage == [] ? cart.style.visibility = "hidden" : cart.style.visibility = "visible"
     resetPopCard()
