@@ -7,6 +7,7 @@
     --secondary2: #fefae0;;
     --accent: #283618;
     --accent2: #606c38;
+    --white: #F9FBFF;
 }
 * {
     padding: 0;
@@ -45,7 +46,7 @@ nav {
     z-index: 10;
     display: flex;
     justify-content: space-between;
-    padding: 0.5em;
+    padding: 0.5em 1em;
     box-shadow:
     0 3.2px 5.3px rgba(0, 0, 0, 0.04),
     0 10.7px 17.9px rgba(0, 0, 0, 0.06),
@@ -55,11 +56,17 @@ nav {
 }
 
 #home-logo {
-    background-color: var(--accent);
     width: calc(7vh - 1em);
     height: 100%;
-
 }
+#home-logo svg {
+    fill: var(--secondary);
+    transition: all ease-in-out 150ms;
+}
+#home-logo svg:hover, #home-logo svg:active {
+    fill: var(--secondary2);
+}
+
 #gobackLabel {
     width: calc(7vh - 1em);
     height: 100%;

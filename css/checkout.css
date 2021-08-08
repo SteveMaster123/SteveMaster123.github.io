@@ -64,7 +64,7 @@ hr {
     border: 1px solid var(--accent);
     text-align: center;
     padding: .5em;
-    background-color: #F9FBFF;
+    background-color: var(--white);
 }
 #recept-title {
     font-size: 1.5em;
