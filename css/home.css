@@ -26,11 +26,14 @@ main {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2em;
+    overflow: hidden;
+
 }
 
 #landing-Container h1 {
     font-family: 'Kdam Thmor', cursive;
-    color: var(--primary)
+    color: var(--primary);
+    text-align: center;
 }
 
 #svg-container {
@@ -65,11 +68,10 @@ main {
 }
 #accent {
     position: absolute;
-    width: 100%;
-    right: 0;
-    left: 0;
-    bottom: 0;
     height: 27vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: var(--secondary);
-    z-index: 0;
+    z-index: 1;
 }
