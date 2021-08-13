@@ -4,6 +4,7 @@ const path = require("path");
 const TelegramBot = require('node-telegram-bot-api');
 const data = require("./data.json");
 
+process.env.NTBA_FIX_319 = 1
 const token = '1915414245:AAEXuf46yYtie2CeG4V2dtbQDtxxhayNRAs';
 const bot = new TelegramBot(token, { polling: true });
 
