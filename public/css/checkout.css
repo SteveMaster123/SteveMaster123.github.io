@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondary2);
+    width: 100%;
+    font-family: 'Nokora', serif;
+}
+
+main {
+    width: 100%;
+    height: auto;
+    padding: .5em;
+}
+
+form {
+    padding: .5em;
+    border-radius: .5em;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin-bottom: .5em;
+}
+
+label {
+    font-size: 1.3em;
+    opacity: .8;
+    margin-bottom: .2em;
+    display: block;
+    color: var(--accent);
+}
+
+.user-input {
+    padding: .3em 0.5em;
+    border-radius: .5em;
+    border: .1em solid var(--accent);
+    margin-left: .5em;
+    width: calc(100% - 0.5em);
+    margin-bottom: 1.5em;
+}
+
+.user-input:last-child {
+    margin-bottom: 0.2em;
+}
+
+#order-btn {
+    padding: .1em 1em;
+    border-radius: .5em;
+    border: none;
+    font-size: 1.3em;
+    background-color: var(--accent);
+    color: var(--secondary2);
+    font-family: 'Nokora', serif;
+
+}
+
+hr {
+    border-top: 1px solid var(--accent);
+}
+#recept-container {
+    height: auto;
+    width: 100%;
+    border: 1px solid var(--accent);
+    text-align: center;
+    padding: .5em;
+    background-color: var(--white);
+}
+#recept-title {
+    font-size: 1.5em;
+}
+#user-info {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 .5em;
+}
+.user-info-specific {
+    text-align: start;
+}
+.user-name, .user-tel, .user-location {
+    text-align: end;
+}
+
+#recept {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: .5em 0;
+}
+.orders {
+    width: 100%;
+    height: auto;
+    padding: 0 .5em;
+    display: grid;
+    grid-template-columns: 7fr 1fr 2fr;
+}
+.orders-name {
+    text-align: start;
+    font-size: .9em;
+}
+.orders-qty, .orders-price {
+    text-align: end;
+    font-family: 'Montserrat', sans-serif;
+}
+.orders-price {
+    font-size: .9em;
+    position: relative;
+    bottom: .15em;
+}
+
+
+
+#total {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .5em;
+    margin-top: .5em;
+}
+.total {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+}
