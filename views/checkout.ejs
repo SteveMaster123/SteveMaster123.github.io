@@ -29,17 +29,22 @@
             <input maxlength="15" id='tel' required class="user-input" type="number" placeholder="លេខទូរស័ព្ទ" name="tel" oninvalid="this.setCustomValidity('សូមបំពេញលេខនៅទីនេះ')" oninput="this.setCustomValidity('')">
 
             <label for="location">ទីតាំង</label>
-            <input maxlength="30" id="location" class="user-input" type="text" placeholder="ទីតាំង" name="location">
+            <div class="user-input location-input-container" style="padding: 0; border: none;">
+                <input maxlength="40" id="location" class="user-input location-input" style="margin: 0;" type="text" placeholder="ទីតាំង" name="location">
+                <section id="location-btn" style="margin: 0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </section>
+            </div>
 
             <button id="order-btn">កម្មង់</button>
         </form>
+
         <div id="recept-container">
             <h3 id="recept-title">វិក័យបត្រ</h3>
             <hr>
             <div id="user-info">
                 <span class="user-info-specific">ឈ្មោះ</span><span class="user-name">---</span>
                 <span class="user-info-specific">លេខទូរស័ព្ទ</span><span class="user-tel">---</span>
-                <span class="user-info-specific">ទីតាំង</span><span class="user-location">---</span>
             </div>
             <hr>
             <div id="recept">
@@ -59,6 +64,8 @@
         </div>
     </main>
 
+
+    <script src="./js/location.js"></script>
     <script>
         const total = document.querySelector(".total");
         const receptContainer = document.querySelector("#recept-container")
@@ -111,10 +118,6 @@
 
         makeSame(document.querySelector("#name"), document.querySelector('.user-name'))
         makeSame(document.querySelector("#tel"), document.querySelector('.user-tel'))
-        makeSame(document.querySelector("#location"), document.querySelector('.user-location'))
-
-
-
     </script>
 </body>
 </html>

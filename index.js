@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const data = require("./data.json");
 const TelegramBot = require('node-telegram-bot-api');
+const data = require("./data.json");
 
 const token = '1915414245:AAEXuf46yYtie2CeG4V2dtbQDtxxhayNRAs';
 const bot = new TelegramBot(token, { polling: true });
@@ -56,5 +56,5 @@ app.post("/submit", async function (req, res) {
 
 //Others
 app.listen(process.env.PORT|| 3000, function () {
-    console.log("Listening on port 3000")
+    console.log(`Listening on port ${process.env.PORT || 3000}`)
 })

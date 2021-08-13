@@ -33,11 +33,12 @@ label {
 
 .user-input {
     padding: .3em 0.5em;
-    border-radius: .5em;
+    border-radius: .2em;
     border: .1em solid var(--accent);
     margin-left: .5em;
     width: calc(100% - 0.5em);
     margin-bottom: 1.5em;
+    font-size: 1em;
 }
 
 .user-input:last-child {
@@ -46,13 +47,42 @@ label {
 
 #order-btn {
     padding: .1em 1em;
-    border-radius: .5em;
+    border-radius: .2em;
     border: none;
     font-size: 1.3em;
     background-color: var(--accent);
     color: var(--secondary2);
     font-family: 'Nokora', serif;
 
+}
+
+.location-input-container {
+    position: relative;
+}
+
+.location-input {
+    height: 100%;
+    width: 100%;
+}
+
+#location-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30.78px;
+    height: 30.78px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3em;
+    background-color: #E3242b;
+    border-top-right-radius: .2em;
+    border-bottom-right-radius: .2em;
+}
+
+#location-btn svg {
+    fill: var(--secondary2)
 }
 
 hr {

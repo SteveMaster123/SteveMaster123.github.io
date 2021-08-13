@@ -100,7 +100,7 @@
                     <h4 class="food-price">10000៛</h4>
                 </div> -->
                 <% for (let food in foods) { %> 
-                <div class="specific-food" data-price="<%= foods[food].price %> ">
+                <div class="specific-food" data-category="<%= foods[food].category.join(" ") %>" data-price="<%= foods[food].price %>">
                     <div class="food-img">
                         <img src="images/គុយទាវ.png" alt="<%= food %> ">
                     </div>
@@ -131,6 +131,7 @@
 
 
     <!-- SCRIPTS -->
+    <script src="../js/category.js"></script>
     <script src="../js/cart.js"></script>
     <script>
         let qtyInput = document.querySelectorAll("#qty");

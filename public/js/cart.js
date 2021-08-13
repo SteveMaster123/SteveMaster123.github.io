@@ -7,7 +7,6 @@ const popQty = document.querySelector('.pop-qty-input')
 const description = document.querySelector('#description-input')
 const receptOrder = document.getElementById("recept")
 let popName = document.querySelector('#orderName')
-
 let price;
 
 //Functions
@@ -94,9 +93,18 @@ function updateQTY(e) {
 
 // Loops
 for (let food of document.querySelectorAll(".specific-food")) {
-    food.addEventListener("click", function (e) {
+    food.addEventListener("click", function () {
         popName.innerHTML = food.querySelector('.food-name').innerHTML;
-        price = food.getAttribute('data-price')
+        price = food.getAttribute('data-price');
+        document.querySelector('#extras-div').innerHTML = ""
+        food.getAttribute('data-category').split(' ').forEach(category => {
+            const categoryOBJ = categoryData[category]
+            let options = ''
+            categoryOBJ['options'].forEach(option => {
+                options += `<label for="${option}"><input type="${categoryOBJ['type']}" id="${option}" name="${category}" class="choiceBtn">${option}</label>`
+            })
+            document.querySelector('#extras-div').innerHTML +=`<div class="extra"><h4>${category}</h4>${options}</div>`
+        })
         showCard()
     })
 }
